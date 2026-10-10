@@ -1,5 +1,5 @@
 # SprocketLAN
-Sprocket LAN Multiplayer mod
+Sprocket LAN Multiplayer mod using BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532
 This mod was developed with the assistance of the Universal Modder toolkit.
 
 To use this mod,
