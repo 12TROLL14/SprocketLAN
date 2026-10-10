@@ -1,7 +1,7 @@
 # SprocketLAN
 Sprocket LAN Multiplayer mod using BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532
 This mod was developed with the assistance of the Universal Modder toolkit.
-
+Despite being a LAN only mod, can be used over the internet with the help of software like LogMeIn Hamachi, Radmin VPN, Zero Tier One or similar.
 To use this mod,
 set TargetIp to the host's IP
 set IsHost to false
