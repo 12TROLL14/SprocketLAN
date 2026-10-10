@@ -17,4 +17,4 @@ press escape then click on reset to respawn.
 
 [![made with universal-modder](https://raw.githubusercontent.com/rehan-remade/universal-modder/main/docs/media/made-with-dark.svg)](https://github.com/rehan-remade/universal-modder)
 
-[![Video Title](https://img.youtube.com/vi/z-IVL5J-xKE/0.jpg)](https://www.youtube.com/watch?v=z-IVL5J-xKE)
+[![ShowCase](https://img.youtube.com/vi/z-IVL5J-xKE/0.jpg)](https://www.youtube.com/watch?v=z-IVL5J-xKE)
