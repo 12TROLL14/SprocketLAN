@@ -6,9 +6,9 @@ Despite being a LAN only mod, can be used over the internet with the help of sof
 
 To use this mod,
 
-set TargetIp to the host's IP
+set TargetIp to the host's IP in the config (appears in BepInEx\config after first launch)
 
-set IsHost to false
+set IsHost to false (appears in BepInEx\config after first launch)
 
 both players need to have the blueprints of all the tanks taking part in the match
 
