@@ -16,5 +16,3 @@ press f11 to join a match
 press escape then click on reset to respawn.
 
 [![made with universal-modder](https://raw.githubusercontent.com/rehan-remade/universal-modder/main/docs/media/made-with-dark.svg)](https://github.com/rehan-remade/universal-modder)
-
-https://youtu.be/z-IVL5J-xKE
