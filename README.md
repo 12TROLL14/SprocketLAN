@@ -39,5 +39,6 @@ Implement `Shells.IShellHandler` (unique `Kind` >= 1) and `ShellRegistry.Registe
 
 ## Known
 - Track link visuals stay scattered after a repair (functional repair works).
+- Shell editor menu stays visible sometimes (just go back to main menu or press escape it'll be gone)
 
 [![made with universal-modder](https://raw.githubusercontent.com/rehan-remade/universal-modder/main/docs/media/made-with-dark.svg)](https://github.com/rehan-remade/universal-modder)
