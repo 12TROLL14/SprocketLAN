@@ -1,12 +1,14 @@
-# SprocketLAN — Sprocket multiplayer via Custom Battles (BepInEx 6 IL2CPP, .NET 6)
-
+# SprocketLAN — Sprocket multiplayer via Custom Battles (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)
+## Help --> send the README.md to Chatgpt it'll gladly help you
 ## Play
 1. Install: `BepInEx/plugins/SprocketLAN/SprocketLAN.dll` (+ `Sounds/kill.wav`) (every player, same version).
-2. One player: F10 menu -> HOST GAME (TCP port 7777 by default, forward it for internet play).
+   there is kill sound support, but you are expected to provide your own kill.wav
+2. Copy BepInEx.cfg from the release to BepInEx\config\
+3. One player: F10 menu -> HOST GAME (TCP port 7777 by default, forward it for internet play).
    Others: type `host-ip:port` -> JOIN.
-3. Everyone opens **Custom Battle**: your own tank on your team, every other player's tank
+4. Everyone opens **Custom Battle**: your own tank on your team, every other player's tank
    (the exact same design file) on the AI team. Start in any order.
-4. Keys: F10 menu, F11 diagnostics dump, F6 field repair (configurable).
+5. Keys: F10 menu, F11 diagnostics dump, F6 field repair (configurable).
 
 ## How it works
 - Enemy (AI-team) tanks become puppets: their CommanderAI is deregistered and they are driven
@@ -36,3 +38,5 @@ Implement `Shells.IShellHandler` (unique `Kind` >= 1) and `ShellRegistry.Registe
 
 ## Known
 - Track link visuals stay scattered after a repair (functional repair works).
+
+[![made with universal-modder](https://raw.githubusercontent.com/rehan-remade/universal-modder/main/docs/media/made-with-dark.svg)](https://github.com/rehan-remade/universal-modder)
