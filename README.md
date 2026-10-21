@@ -9,6 +9,7 @@
 4. Everyone opens **Custom Battle**: your own tank on your team, every other player's tank
    (the exact same design file) on the AI team. Start in any order.
 5. Keys: F10 menu, F11 diagnostics dump, F6 field repair (configurable).
+6. To edit your shells, you have to select one of your ammo racks and you will see a menu to configure your shells. (default values set in config)
 
 ## How it works
 - Enemy (AI-team) tanks become puppets: their CommanderAI is deregistered and they are driven
