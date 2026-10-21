@@ -3,7 +3,7 @@
 ## Play
 1. Install: `BepInEx/plugins/SprocketLAN/SprocketLAN.dll` (+ `Sounds/kill.wav`) (every player, same version).
    there is kill sound support, but you are expected to provide your own kill.wav
-2. Copy BepInEx.cfg from the release to BepInEx\config\
+2. Copy `BepInEx.cfg` from the release to `BepInEx\config\`
 3. One player: F10 menu -> HOST GAME (TCP port 7777 by default, forward it for internet play).
    Others: type `host-ip:port` -> JOIN.
 4. Everyone opens **Custom Battle**: your own tank on your team, every other player's tank
