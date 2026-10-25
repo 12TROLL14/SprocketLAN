@@ -1,12 +1,13 @@
-# SprocketLAN — multiplayer for Sprocket (BepInEx 6 IL2CPP, .NET 6)
+# SprocketLAN — multiplayer for Sprocket (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)
 
 Version **6.0.0** (protocol 15). Every player needs the same version: a different one is refused when joining.
 
 ## Install
-1. Install **BepInEx 6 (IL2CPP, Unity)** in the Sprocket folder and start the game once.
-2. Copy the `BepInEx` folder from this archive into the Sprocket folder, so you get
-   `BepInEx/plugins/SprocketLAN/SprocketLAN.dll` and `BepInEx/plugins/SprocketLAN/Sounds/kill.wav`.
-3. Start the game: the **SPROCKET LAN** panel appears (F10 hides / shows it).
+1. Install **BepInEx 6  (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)** in the Sprocket folder and start the game once.
+2. Copy `BepInEx.cfg` from the release to `BepInEx\config\` (the one default config WILL result in a crash ! use the config from release.)
+3. Copy the `SprocketLAN.dll` from this release into `BepInEx/plugins/`, so you get
+   `BepInEx/plugins/SprocketLAN/SprocketLAN.dll` and `BepInEx\config\BepInEx.cfg`.
+4. Start the game: the **SPROCKET LAN** panel appears (F10 hides / shows it).
 
 ## Play
 1. One player: F10 → **HOST GAME** (TCP 7777 by default; forward it for internet play, LAN works as is).
