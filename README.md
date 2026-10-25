@@ -1,0 +1,105 @@
+# SprocketLAN — multiplayer for Sprocket (BepInEx 6 IL2CPP, .NET 6)
+
+Version **6.0.0** (protocol 15). Every player needs the same version: a different one is refused when joining.
+
+## Install
+1. Install **BepInEx 6 (IL2CPP, Unity)** in the Sprocket folder and start the game once.
+2. Copy the `BepInEx` folder from this archive into the Sprocket folder, so you get
+   `BepInEx/plugins/SprocketLAN/SprocketLAN.dll` and `BepInEx/plugins/SprocketLAN/Sounds/kill.wav`.
+3. Start the game: the **SPROCKET LAN** panel appears (F10 hides / shows it).
+
+## Play
+1. One player: F10 → **HOST GAME** (TCP 7777 by default; forward it for internet play, LAN works as is).
+   Others: type `host-ip:port` → **JOIN**.
+2. Everyone opens **Custom Battle**: your own tank on your team, every other player's tank
+   (the exact same design file) on the AI team. Start in any order.
+3. Use the same armour / shell settings as everyone else: F8 → **SEND MY ARMOUR / SHELL SETTINGS**.
+   Designs can be sent the same way.
+
+## Keys (all configurable)
+| Key | Action |
+|---|---|
+| F10 | Multiplayer menu (host / join / disconnect, stabiliser, settings) |
+| F7 | In-game settings panel |
+| F8 | Send designs / settings to other players |
+| F6 | Field repair (hold position; cancelled if you move) |
+| B | Stabiliser on/off |
+| 1-6 | Load AP / APHE / HE / APDS / APFSDS / HEAT (reloads the guns of the active fire group) |
+| F11 | Diagnostics dump to the log |
+
+## Features
+### Armour and penetration (on the game's own armour model)
+Every hit is worked out by the mod on the **game's own armour model** — the one the designer's armour
+view shows — instead of the game's penetration simulation:
+- Plates are solids with their raw thickness (designer value); the shell needs raw / cos(angle).
+  Applique and add-on armour (fenders, spare tracks) count by material along the path. Wheels,
+  sprockets and idlers are not armour.
+- Ricochet angles per shell (AP/APHE 68°, APC/APHEC 70°, APDS 75°, APFSDS 78°, HEAT 82°), overmatch
+  (calibre ≥ 3.5× thickness), 30% penetration lost per bounce. **Shot traps**: a shell bouncing off the
+  outside flies on and can hit another plate.
+- Leaving a plate the shell turns away from the normal (`ExitNormalizationAt60/70`, reduced for
+  APDS / APFSDS / caps; applique: `AppliqueExitTurnDegrees`, 0 by default).
+- Spall cone behind every penetrated plate; spall, APHE and HE fragments are traced through the same
+  model (they stop in armour, bounce, damage the modules they enter; crew/modules let spall through
+  at `SpallThroughModuleSpeed`; outside, wheels and external parts count by their material).
+- APHE: fuse arming thickness + delay, spherical burst; bounces by filler. HE bursts on the first thing
+  it touches (armour, wheel, track), out of any steel, and gets in only if its penetration beats the plate.
+  HEAT: jet loses penetration per metre between plates.
+- Tracks have a hitbox band around the wheels (a shell breaks the track, fragments damage it).
+  Ammo racks are tougher (×4). A repaired engine restarts.
+
+### Per-gun shell settings and autocannons
+In the designer the **Shells** panel opens next to the **Ammo Rack** panel: APHE / HE filler (capped to
+what the gun's shell holds), APHE fuse, AP/APHE caps, and **Autocannon** with a rate of fire
+(rounds/min; penetration ÷ `AutocannonPenetrationDivisor`, 1.5 by default). Settings are saved per
+design **and per gun** (by the rack's calibre, e.g. 20x200mm) in `BepInEx/config/SprocketLAN_shells.txt`.
+
+### Pen cam
+Replay of each of your hits (and a kill cam when you die), drawn from the game's armour model coloured
+by thickness: the shell's real path (bounces included), every struck plate highlighted, spall cones,
+APHE / HE bursts, damaged modules, ammo rack explosions. Fragments that hit nothing are not drawn.
+
+### Stabiliser
+B or the STAB button: turret traverse ×4 and gun elevation ×6 (separate multipliers).
+
+### In-game settings (F7)
+Every setting with sliders / toggles / text boxes and reset buttons; a live diagram for the geometric
+ones (spall cones, exit turn, ricochet angles, overmatch, HE burst offsets, APHE fuse, HEAT jet).
+Changes apply immediately and are saved.
+
+### Sharing (F8)
+- Designs (blueprint + picture) to any player or IP; a replaced design is backed up.
+- Gameplay settings (Armour, Shells, Combat, Repair, Stabiliser; not keys, names, folders, network,
+  pen cam): the receiver sees the differences and chooses APPLY or DISCARD (old config backed up).
+- Hits are worked out on the tank that is hit with that player's settings: everyone should use the same.
+
+## How it works
+- Enemy (AI-team) tanks become puppets driven through the game's own crew tasks, corrected to the
+  owner's position; turrets / guns copied per aimable.
+- Shots: launch state + projectile type + shell type and the shooter's shell parameters; the puppet's
+  own cannon fires it.
+- Damage is victim-authoritative: owners replicate health, fire, repairs and kills, and send the pen cam
+  record (path, fragments, struck plates, damage) back to the shooter.
+- Destroyed = all crew knocked out or an ammo rack destroyed → kill feed + banner. Native end screens
+  are suppressed while connected.
+- Runs from Harmony postfixes on `SprocketApplication.Update/FixedUpdate`; UI is uGUI/TMP.
+
+## Config (`BepInEx/config/SprocketLAN.cfg`)
+Easiest through F7. Sections: `[Armour]`, `[Shells]`, `[Stabiliser]`, `[PenCam]`, `[Repair]`, `[Designs]`,
+`[Battle]`, `[Combat]`, `[Puppets]`, `[Network]`, `[Player]`, `[Settings]`, `[Debug]`.
+Fallbacks: `UseGameArmourModel` / `OwnFragmentModel` (Armour) switch back to the older 3D-model
+measurement / the game's fragment simulation. `[Debug] Verbose` adds detailed hit logs.
+
+## Troubleshooting
+- Logs: `BepInEx/LogOutput.log` and `BepInEx/SprocketLAN_<pid>.log` (send both from the shooter and the
+  tank that was hit when reporting a hit problem; turn on `[Debug] Verbose` first).
+- "Protocol mismatch" when joining: someone has another version.
+- Two game copies on one PC: the second listens for designs on port 7781 (send to `ip:7781`).
+
+## Build
+`SPROCKET=/path/to/Sprocket ./build.sh` compiles with Roslyn against the game's own `dotnet/` runtime +
+BepInEx core + interop DLLs (no NuGet).
+
+## Adding shell types
+Implement `Shells.IShellHandler` (unique `Kind` >= 1) and call `ShellRegistry.Register(...)` from a
+plugin's `Load()`. Shots carry `ShellKind` + an opaque payload; kind 0 = native projectile.
