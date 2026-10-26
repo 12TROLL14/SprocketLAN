@@ -104,3 +104,5 @@ BepInEx core + interop DLLs (no NuGet).
 ## Adding shell types
 Implement `Shells.IShellHandler` (unique `Kind` >= 1) and call `ShellRegistry.Register(...)` from a
 plugin's `Load()`. Shots carry `ShellKind` + an opaque payload; kind 0 = native projectile.
+
+[![made with universal-modder](https://raw.githubusercontent.com/rehan-remade/universal-modder/main/docs/media/made-with-dark.svg)](https://github.com/rehan-remade/universal-modder)
