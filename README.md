@@ -3,7 +3,8 @@
 Version **6.0.0** (protocol 15). Every player needs the same version: a different one is refused when joining.
 
 ## Install
-1. Install **BepInEx 6  (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)** in the Sprocket folder and start the game once.
+1. Install **BepInEx 6  (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)** in the Sprocket folder and start the game once.                                                         https://builds.bepinex.dev/projects/bepinex_be<img width="1355" height="885" alt="build" src="https://github.com/user-attachments/assets/6f280e02-fdd4-4872-91a5-7e1aa3e89b6b" />
+
 2. Copy `BepInEx.cfg` from the release to `BepInEx\config\` (the one default config WILL result in a crash ! use the config from release.)
 3. Copy the `SprocketLAN.dll` from this release into `BepInEx/plugins/`, so you get
    `BepInEx/plugins/SprocketLAN/SprocketLAN.dll` and `BepInEx\config\BepInEx.cfg`.
