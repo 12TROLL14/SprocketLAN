@@ -141,10 +141,12 @@ BepInEx core + interop DLLs (no NuGet).
 
 ## For other mods (API)
 See **API.md**. `SprocketLAN.Api.Lan` provides:
-
-
-[![made with universal-modder](https://raw.githubusercontent.com/rehan-remade/universal-modder/main/docs/media/made-with-dark.svg)](https://github.com/rehan-remade/universal-modder)
 - channels to send your own messages between players;
 - `LocalShot` / `RemoteShot`, so data attached to a shot arrives with the round fired from the shooter's puppet;
 - `RegisterShell` for shell types that replace the round completely;
 - player and tank lookups.
+
+
+[![made with universal-modder](https://raw.githubusercontent.com/rehan-remade/universal-modder/main/docs/media/made-with-dark.svg)](https://github.com/rehan-remade/universal-modder)
+
+
