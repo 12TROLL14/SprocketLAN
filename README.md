@@ -140,7 +140,7 @@ measurement / the game's fragment simulation. `[Debug] Verbose` adds detailed hi
 BepInEx core + interop DLLs (no NuGet).
 
 ## For other mods (API)
-See **API.md**. `SprocketLAN.Api.Lan` provides:
+See **API.md**  , `SprocketLAN.Api.Lan` provides:
 - channels to send your own messages between players;
 - `LocalShot` / `RemoteShot`, so data attached to a shot arrives with the round fired from the shooter's puppet;
 - `RegisterShell` for shell types that replace the round completely;
