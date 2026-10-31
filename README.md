@@ -4,7 +4,7 @@ Version **6.6.0** (protocol 17). Every player needs the same version: a differen
 
 **The installation guide is as simple as it gets, if you are still having trouble installing the mod, copy paste the readme to chatGPT and ask it for help.**
 ## Install
-1. Install **BepInEx 6  (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)** in the Sprocket folder and start the game once after completing Step 2.                                                         https://builds.bepinex.dev/projects/bepinex_be<img width="1355" height="885" alt="build" src="https://github.com/user-attachments/assets/6f280e02-fdd4-4872-91a5-7e1aa3e89b6b" />
+1. Install **BepInEx 6  (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)** in the Sprocket folder and start the game once.                                                         https://builds.bepinex.dev/projects/bepinex_be<img width="1355" height="885" alt="build" src="https://github.com/user-attachments/assets/6f280e02-fdd4-4872-91a5-7e1aa3e89b6b" />
 
 2. Copy `BepInEx.cfg` from the release to `BepInEx\config\` (the one default config WILL result in a crash ! use the config from release.)
 3. Copy the `SprocketLAN.dll` from this release into `BepInEx/plugins/`, so you get
