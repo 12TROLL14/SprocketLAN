@@ -1,14 +1,17 @@
-# SprocketLAN — multiplayer for Sprocket (BepInEx 6 IL2CPP, .NET 6)
+# SprocketLAN — multiplayer for Sprocket (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)
 
 Version **6.6.5** (protocol 18). Every player needs the same protocol: a different one is refused when joining
 (6.5.x and 6.6.0 can play together).
 
+**The installation guide is as simple as i could make it, if you are still having trouble installing the mod, copy paste the readme to chatGPT and ask it for help.**
+
 ## Install
-1. Install **BepInEx 6 (IL2CPP, Unity)** in the Sprocket folder and start the game once.
-2. Copy the `BepInEx` folder from this archive into the Sprocket folder, so you get
-   `BepInEx/plugins/SprocketLAN/SprocketLAN.dll` and `BepInEx/plugins/SprocketLAN/Sounds/kill.wav`
-   (and `API.md`, for mod makers).
-3. Start the game: the **SPROCKET LAN** panel appears (F10 hides / shows it).
+1. Install **BepInEx 6  (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)** in the Sprocket folder and start the game once.                                                         https://builds.bepinex.dev/projects/bepinex_be<img width="1355" height="885" alt="build" src="https://github.com/user-attachments/assets/6f280e02-fdd4-4872-91a5-7e1aa3e89b6b" />
+
+2. Copy `BepInEx.cfg` from the release to `BepInEx\config\` (the one default config WILL result in a crash ! use the config from release.)
+3. Copy the `SprocketLAN.dll` from this release into `BepInEx/plugins/`, so you get
+   `BepInEx/plugins/SprocketLAN/SprocketLAN.dll` and `BepInEx\config\BepInEx.cfg`.
+4. Start the game: the **SPROCKET LAN** panel appears (F10 hides / shows it).
 
 ## Play
 1. One player: F10 → **HOST GAME** (TCP 7777 by default; forward it for internet play, LAN works as is).
@@ -169,3 +172,6 @@ See **API.md**. `SprocketLAN.Api.Lan` provides:
 - `LocalShot` / `RemoteShot`, so data attached to a shot arrives with the round fired from the shooter's puppet;
 - `RegisterShell` for shell types that replace the round completely;
 - player and tank lookups.
+
+
+[![made with universal-modder](https://raw.githubusercontent.com/rehan-remade/universal-modder/main/docs/media/made-with-dark.svg)](https://github.com/rehan-remade/universal-modder)
