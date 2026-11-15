@@ -1,4 +1,4 @@
-# SprocketLAN — multiplayer for Sprocket (BepInEx 6 IL2CPP, .NET 6)
+# SprocketLAN — multiplayer for Sprocket (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)
 
 Version **6.18.3** (protocol 20). Every player needs the same protocol: a different one is refused when joining
 (everyone needs 6.10.0 or newer).
