@@ -13,9 +13,11 @@ Version **6.18.3** (protocol 20). Every player needs the same protocol: a differ
 1. Install **BepInEx 6  (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)** in the Sprocket folder and start the game once.                                                         https://builds.bepinex.dev/projects/bepinex_be<img width="1355" height="885" alt="build" src="https://github.com/user-attachments/assets/6f280e02-fdd4-4872-91a5-7e1aa3e89b6b" />
 
 2. Copy `BepInEx.cfg` from the release to `BepInEx\config\` (the default config WILL result in a crash ! use the config from release.)
-3. Copy the `SprocketLAN.dll` from this release into `BepInEx/plugins/`, so you get
-   `BepInEx/plugins/SprocketLAN/SprocketLAN.dll` and `BepInEx\config\BepInEx.cfg`.
-4. Start the game: the **SPROCKET LAN** panel appears (F10 hides / shows it).
+3. Launch the game once until it reaches the main menu then close it. 
+4. Copy the `SprocketLAN.dll` from this release into `BepInEx/plugins/`, so you get
+   `BepInEx/plugins/SprocketLAN/SprocketLAN.dll` and `BepInEx\config\BepInEx.cfg`. (create `SprocketLAN` folder if you don't have it in plugins)
+   Or Copy `SprocketLAN_v6.18.3.zip` from the release to the game folder and extract it there.
+5. Start the game: the **SPROCKET LAN** panel appears (F10 hides / shows it).
 
 **Linux (Proton):** BepInEx loads through its `winhttp.dll`, so Wine has to be told to use it. Either set Steam's
 launch options to `WINEDLLOVERRIDES="winhttp=n,b" %command%`, or set it once in the game's Proton prefix:
