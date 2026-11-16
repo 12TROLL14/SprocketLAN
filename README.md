@@ -10,7 +10,7 @@ Version **6.18.3** (protocol 20). Every player needs the same protocol: a differ
 > shooter's and the hit tank's. Read **Network safety** below before playing with people you don't know.
 
 ## Install
-1. Install **BepInEx 6  (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)** in the Sprocket folder and start the game once.                                                         https://builds.bepinex.dev/projects/bepinex_be<img width="1355" height="885" alt="build" src="https://github.com/user-attachments/assets/6f280e02-fdd4-4872-91a5-7e1aa3e89b6b" />
+1. Install **BepInEx 6  (BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.780+3be4532, .NET 6)** in the Sprocket folder.                                                         https://builds.bepinex.dev/projects/bepinex_be<img width="1355" height="885" alt="build" src="https://github.com/user-attachments/assets/6f280e02-fdd4-4872-91a5-7e1aa3e89b6b" />
 
 2. Copy `BepInEx.cfg` from the release to `BepInEx\config\` (the default config WILL result in a crash ! use the config from release.)
 3. Launch the game once until it reaches the main menu then close it. 
