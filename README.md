@@ -3,6 +3,8 @@
 Version **6.18.3** (protocol 20). Every player needs the same protocol: a different one is refused when joining
 (everyone needs 6.10.0 or newer).
 
+> **Full transparency: SprocketLAN has been made with heavy help from AI assistants (Claude)**
+
 > **OPEN BETA.** Expect bugs: the newest parts have had little testing in real games. They are the F8 / F9 / F10
 > menus, the lobby's tank rules, decal and paint sharing, and the Steam DLL finder.
 > **Reporting a bug:** say what you did and what happened, and attach `BepInEx/LogOutput.log` and
